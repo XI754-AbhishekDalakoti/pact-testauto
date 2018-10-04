@@ -173,7 +173,10 @@ get_deployments() {
 show_pod() {
   kubectl --kubeconfig="$KUBECONFIG_FN" get pod $NAME
 }
-
+delete_pod()
+{
+kubectl delete namespace qa
+}
 scale_pod_in_steps_adaptive() {
   # currently unused
   cycle_time=5
