@@ -2,4 +2,5 @@ FROM openjdk:8-jre-alpine
 VOLUME /tmp
 ADD build/libs/pact-testauto*.jar app.jar
 ADD .env .env
+Run mvn clean install
 ENTRYPOINT [ "sh", "-c", "source .env && java -jar app.jar" ]
